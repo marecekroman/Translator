@@ -12,7 +12,6 @@ struct SplashScreenView: View {
     @State private var size = 0.8
     @State private var opacity = 0.5
     
-    // Customise your SplashScreen here
     var body: some View {
         if isActive {
             ContentView()
@@ -21,7 +20,7 @@ struct SplashScreenView: View {
                 VStack {
                     Image(systemName: "globe")
                         .font(.system(size: 120))
-                        .foregroundColor(.yellow)
+                        .foregroundColor(.red)
                     Text("Translator")
                         .font(Font.custom("Montserrat-Bold", size: 26))
                         .foregroundColor(.red)
@@ -35,7 +34,7 @@ struct SplashScreenView: View {
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(.teal)
+                .background(.black)
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {

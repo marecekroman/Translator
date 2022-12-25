@@ -12,49 +12,69 @@ struct ContentView: View {
     @State private var output: String = ""
     
     var body: some View {
-        VStack {
-            ZStack{
-                if(input.isEmpty){
-                    Text("Enter text to translate")
-                        .foregroundColor(.red)
+        NavigationView {
+            VStack {
+                ZStack{
+                    if(input.isEmpty){
+                        Text("Enter text to translate")
+                            .foregroundColor(.red)
+                    }
+                    TextField(
+                        "",
+                        text: $input
+                    )
+                    .frame(width: /*@START_MENU_TOKEN@*/350.0/*@END_MENU_TOKEN@*/, height: 50.0)
+                    .accentColor(.red)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.red)
                 }
-                TextField(
-                    "",
-                    text: $input
-                )
-                .frame(width: /*@START_MENU_TOKEN@*/350.0/*@END_MENU_TOKEN@*/, height: 50.0)
-                .accentColor(.red)
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.red)
-            }
-
-            Button("Button") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-            }
-            .frame(width: 600, height: 60.0)
-            .foregroundColor(.black)
-            .background(Color.red)
-            
-            
-            ZStack{
-                if(input.isEmpty){
-                    Text("Translation")
-                        .foregroundColor(.red)
+                
+                Button("Button") {
+                    
                 }
-                TextField(
-                    "",
-                    text: $input
-                )
-                .frame(width: /*@START_MENU_TOKEN@*/350.0/*@END_MENU_TOKEN@*/, height: 50.0)
-                .accentColor(.red)
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.red)
+                .frame(width: 600, height: 60.0)
+                .foregroundColor(.black)
+                .background(Color.red)
+                
+                
+                ZStack{
+                    if(input.isEmpty){
+                        Text("Translation")
+                            .foregroundColor(.red)
+                    }
+                    TextField(
+                        "",
+                        text: $input
+                    )
+                    .frame(width: /*@START_MENU_TOKEN@*/350.0/*@END_MENU_TOKEN@*/, height: 50.0)
+                    .accentColor(.red)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.red)
+                }
+                
+                NavigationLink(destination: TranslateHistory()) {
+        
+                    Text("Translation History")
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(Color.red)
+                }
+                .offset(x: -70.0, y: 270.0)
+                
+                NavigationLink(destination: About()) {
+        
+                    Text("About")
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(Color.red)
+                }
+                .offset(x: 90, y: 210.0)
             }
             
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black)
         }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.black)
     }
 }
 
@@ -63,4 +83,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
