@@ -12,6 +12,7 @@
 		F1569189295876640046BA68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1569188295876640046BA68 /* Assets.xcassets */; };
 		F156918C295876640046BA68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F156918B295876640046BA68 /* Preview Assets.xcassets */; };
 		F156919329587A320046BA68 /* SplashScreenView..swift in Sources */ = {isa = PBXBuildFile; fileRef = F156919229587A320046BA68 /* SplashScreenView..swift */; };
+		F180BBDD2958D0CB00E8DDE8 /* TranslateHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F180BBDC2958D0CB00E8DDE8 /* TranslateHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		F1569188295876640046BA68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F156918B295876640046BA68 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F156919229587A320046BA68 /* SplashScreenView..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView..swift; sourceTree = "<group>"; };
+		F180BBDC2958D0CB00E8DDE8 /* TranslateHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				F156918B295876640046BA68 /* Preview Assets.xcassets */,
 				F156919229587A320046BA68 /* SplashScreenView..swift */,
+				F180BBDC2958D0CB00E8DDE8 /* TranslateHistory.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1569187295876620046BA68 /* ContentView.swift in Sources */,
+				F180BBDD2958D0CB00E8DDE8 /* TranslateHistory.swift in Sources */,
 				F156919329587A320046BA68 /* SplashScreenView..swift in Sources */,
 				F1569185295876620046BA68 /* TranslatorApp.swift in Sources */,
 			);
