@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    var trans = Translation()
     @State private var input: String = ""
     @State private var output: String = ""
     
@@ -30,6 +31,8 @@ struct ContentView: View {
                 }
                 
                 Button("Button") {
+                    trans.getTranslation()
+                    output=trans.greetAgain(person: input)
                     
                 }
                 .frame(width: 600, height: 60.0)
@@ -38,18 +41,17 @@ struct ContentView: View {
                 
                 
                 ZStack{
-                    if(input.isEmpty){
+                    if(output.isEmpty){
                         Text("Translation")
                             .foregroundColor(.red)
-                    }
-                    TextField(
-                        "",
-                        text: $input
-                    )
+                            
+                    } else {
+                        Text(output)
                     .frame(width: /*@START_MENU_TOKEN@*/350.0/*@END_MENU_TOKEN@*/, height: 50.0)
                     .accentColor(.red)
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.red)
+                    }
                 }
                 
                 NavigationLink(destination: TranslateHistory()) {
@@ -68,10 +70,8 @@ struct ContentView: View {
                         .foregroundColor(.black)
                         .background(Color.red)
                 }
-                .offset(x: 90, y: 210.0)
+                .offset(x: 120.0, y: 210.0)
             }
-            
-            .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.black)
         }

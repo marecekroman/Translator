@@ -9,7 +9,14 @@ import SwiftUI
 
 struct About: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+                ZStack{
+                    Text("This application was made by Roman Marecek as a school project")
+                    .foregroundColor(.red)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black)
+        }
     }
 }
 
