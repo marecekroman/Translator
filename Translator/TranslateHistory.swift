@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct TranslateHistory: View {
+
+    @State public var history = UserDefaults.standard.object(forKey: "savedHistory") as? [String: String] ?? [String: String]()
+    
+    @State private var profileText = ""
+    
+    func getHistory(){
+        for (key, value) in history {
+            profileText = profileText + key + "--->" + value + "\n"
+        }
+        return
+    }
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+        VStack{
+            
+           TextEditor(text: .constant(profileText))
+                .foregroundColor(.secondary)
+                .padding(.horizontal)
+                .navigationTitle("Translation history")
+                .onAppear {
+                    self.getHistory()
+                }
+        }
     }
 }
 

@@ -47,11 +47,14 @@ struct ContentView: View{
 
       task.resume()
     }
-
+    
+    @State public var history = UserDefaults.standard.object(forKey: "savedHistory") as? [String: String] ?? [String: String]()
+    
     @State private var input: String = ""
     @State private var output: String = ""
     
     var body: some View {
+        
         NavigationView {
             VStack {
                 ZStack{
@@ -75,6 +78,9 @@ struct ContentView: View{
                             switch result {
                             case .success(let translation):
                                 output = translation.translatedText
+                                
+                                history[input]=output
+                                UserDefaults.standard.set(history, forKey: "savedHistory")
                             case .failure(let error):
                                 print(error)
                             }
