@@ -15,7 +15,7 @@ struct TranslateHistory: View {
     
     func getHistory(){
         for (key, value) in history {
-            profileText = profileText + key + "--->" + value + "\n"
+            profileText = profileText + key + " ---> " + value + "\n"
         }
         return
     }
