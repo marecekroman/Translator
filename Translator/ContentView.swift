@@ -23,8 +23,6 @@ struct ContentView: View{
         
         let urlString = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
-        
-        
         guard let url = URL(string: urlString!)
         else{return}
         
