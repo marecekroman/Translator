@@ -14,7 +14,6 @@
 		F156919329587A320046BA68 /* SplashScreenView..swift in Sources */ = {isa = PBXBuildFile; fileRef = F156919229587A320046BA68 /* SplashScreenView..swift */; };
 		F180BBDD2958D0CB00E8DDE8 /* TranslateHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F180BBDC2958D0CB00E8DDE8 /* TranslateHistory.swift */; };
 		F180BC052958F61800E8DDE8 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = F180BC042958F61800E8DDE8 /* About.swift */; };
-		F180BC072958FD8F00E8DDE8 /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F180BC062958FD8F00E8DDE8 /* TranslationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		F156919229587A320046BA68 /* SplashScreenView..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView..swift; sourceTree = "<group>"; };
 		F180BBDC2958D0CB00E8DDE8 /* TranslateHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateHistory.swift; sourceTree = "<group>"; };
 		F180BC042958F61800E8DDE8 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
-		F180BC062958FD8F00E8DDE8 /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +60,10 @@
 				F180BBDC2958D0CB00E8DDE8 /* TranslateHistory.swift */,
 				F1569184295876620046BA68 /* TranslatorApp.swift */,
 				F1569186295876620046BA68 /* ContentView.swift */,
+				F180BC042958F61800E8DDE8 /* About.swift */,
+				F156919229587A320046BA68 /* SplashScreenView..swift */,
 				F1569188295876640046BA68 /* Assets.xcassets */,
 				F156918A295876640046BA68 /* Preview Content */,
-				F180BC042958F61800E8DDE8 /* About.swift */,
-				F180BC062958FD8F00E8DDE8 /* TranslationService.swift */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -73,7 +71,6 @@
 		F156918A295876640046BA68 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				F156919229587A320046BA68 /* SplashScreenView..swift */,
 				F156918B295876640046BA68 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -154,7 +151,6 @@
 				F180BBDD2958D0CB00E8DDE8 /* TranslateHistory.swift in Sources */,
 				F156919329587A320046BA68 /* SplashScreenView..swift in Sources */,
 				F1569185295876620046BA68 /* TranslatorApp.swift in Sources */,
-				F180BC072958FD8F00E8DDE8 /* TranslationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,11 +4,52 @@
 //
 //  Created by Roman Mareček on 25.12.2022.
 //
-
+import Foundation
 import SwiftUI
 
-struct ContentView: View {
-    var trans = Translation()
+struct ContentView: View{
+
+    struct Translation: Codable {
+      let translatedText: String
+    }
+
+    struct Response: Codable {
+      let responseData: Translation
+    }
+
+    func getTranslation(completion: @escaping (Result<Translation, Error>) -> Void) {
+        
+        let address = "https://api.mymemory.translated.net/get?q=" + input + "&langpair=en|cs"
+        
+        let urlString = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        
+        
+        guard let url = URL(string: urlString!)
+        else{return}
+        
+      let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        if let error = error {
+          completion(.failure(error))
+          return
+        }
+
+        guard let data = data else {
+          completion(.failure(NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "Data was not returned from the server."])))
+          return
+        }
+
+        do {
+          let response = try JSONDecoder().decode(Response.self, from: data)
+          completion(.success(response.responseData))
+        } catch {
+          completion(.failure(error))
+        }
+      }
+
+      task.resume()
+    }
+
     @State private var input: String = ""
     @State private var output: String = ""
     
@@ -31,9 +72,16 @@ struct ContentView: View {
                 }
                 
                 Button("Button") {
-                    trans.getTranslation()
-                    output=trans.greetAgain(person: input)
-                    
+                    if(!input.isEmpty){
+                        getTranslation { result in
+                            switch result {
+                            case .success(let translation):
+                                output = translation.translatedText
+                            case .failure(let error):
+                                print(error)
+                            }
+                        }
+                    }
                 }
                 .frame(width: 600, height: 60.0)
                 .foregroundColor(.black)
