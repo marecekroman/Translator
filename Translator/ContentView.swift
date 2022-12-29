@@ -4,6 +4,7 @@
 //
 //  Created by Roman Mareček on 25.12.2022.
 //
+
 import Foundation
 import SwiftUI
 
@@ -87,9 +88,10 @@ struct ContentView: View{
                         }
                     }
                 }
-                .frame(width: 600, height: 60.0)
+                .frame(width: 120, height: 60.0)
                 .foregroundColor(.black)
                 .background(Color.red)
+                .clipShape(Capsule())
                 
                 
                 ZStack{
@@ -112,6 +114,7 @@ struct ContentView: View{
                         .padding()
                         .foregroundColor(.black)
                         .background(Color.red)
+                        .clipShape(Capsule())
                 }
                 .offset(x: -70.0, y: 270.0)
                 
@@ -121,8 +124,9 @@ struct ContentView: View{
                         .padding()
                         .foregroundColor(.black)
                         .background(Color.red)
+                        .clipShape(Capsule())
                 }
-                .offset(x: 120.0, y: 210.0)
+                .offset(x: 120.0, y: 209.0)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.black)

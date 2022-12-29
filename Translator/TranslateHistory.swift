@@ -19,22 +19,38 @@ struct TranslateHistory: View {
         }
         return
     }
-
+    
     var body: some View {
 
         VStack{
-            
-           TextEditor(text: .constant(profileText))
-                .foregroundColor(.secondary)
-                .padding(.horizontal)
-                .navigationTitle("Translation history")
-                .onAppear {
-                    self.getHistory()
-                }
+            Text("Translation history")
+                .foregroundColor(.red)
+            if #available(iOS 16.0, *) {
+                TextEditor(text: .constant(profileText))
+                    .padding(.horizontal)
+                    .onAppear {
+                        self.getHistory()
+                    }
+                    .scrollContentBackground(.hidden)
+                    .background(.black)
+                    .foregroundColor(.red)
+            } else {
+                Text(profileText)
+                     .padding(.horizontal)
+                     .background(.black)
+                     .foregroundColor(.red)
+                
+                     .onAppear {
+                         self.getHistory()
+                     }
+                     .lineLimit(nil)
+            }
+
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.black)
     }
 }
-
 
 struct TranslateHistory_Previews: PreviewProvider {
     static var previews: some View {
