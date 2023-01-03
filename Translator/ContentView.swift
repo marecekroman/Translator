@@ -73,7 +73,7 @@ struct ContentView: View{
                     .foregroundStyle(.red)
                 }
                 
-                Button("Button") {
+                Button("Translate") {
                     if(!input.isEmpty){
                         getTranslation { result in
                             switch result {
