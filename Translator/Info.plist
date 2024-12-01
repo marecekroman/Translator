@@ -1,12 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   Info.plist
-   Translator
-
-   Created by Roman Mareček on 27.11.2024.
-   Copyright (c) 2024 ___ORGANIZATIONNAME___. All rights reserved.
--->
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;key&gt;CFBundleDevelopmentRegion&lt;/key&gt;
+    &lt;string&gt;$(DEVELOPMENT_LANGUAGE)&lt;/string&gt;
+    &lt;key&gt;CFBundleExecutable&lt;/key&gt;
+    &lt;string&gt;$(EXECUTABLE_NAME)&lt;/string&gt;
+    &lt;key&gt;CFBundleIdentifier&lt;/key&gt;
+    &lt;string&gt;$(PRODUCT_BUNDLE_IDENTIFIER)&lt;/string&gt;
+    &lt;key&gt;CFBundleInfoDictionaryVersion&lt;/key&gt;
+    &lt;string&gt;6.0&lt;/string&gt;
+    &lt;key&gt;CFBundleName&lt;/key&gt;
+    &lt;string&gt;$(PRODUCT_NAME)&lt;/string&gt;
+    &lt;key&gt;CFBundlePackageType&lt;/key&gt;
+    &lt;string&gt;$(PRODUCT_BUNDLE_PACKAGE_TYPE)&lt;/string&gt;
+    &lt;key&gt;CFBundleShortVersionString&lt;/key&gt;
+    &lt;string&gt;1.0&lt;/string&gt;
+    &lt;key&gt;CFBundleVersion&lt;/key&gt;
+    &lt;string&gt;1&lt;/string&gt;
+    &lt;key&gt;LSRequiresIPhoneOS&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;
+    &lt;string&gt;We need access to microphone for speech synthesis&lt;/string&gt;
+    &lt;key&gt;NSSpeechRecognitionUsageDescription&lt;/key&gt;
+    &lt;string&gt;We need access to speech recognition for text-to-speech functionality&lt;/string&gt;
+    &lt;key&gt;UIApplicationSceneManifest&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;UIApplicationSupportsMultipleScenes&lt;/key&gt;
+        &lt;false/&gt;
+        &lt;key&gt;UISceneConfigurations&lt;/key&gt;
+        &lt;dict&gt;
+            &lt;key&gt;UIWindowSceneSessionRoleApplication&lt;/key&gt;
+            &lt;array&gt;
+                &lt;dict&gt;
+                    &lt;key&gt;UISceneConfigurationName&lt;/key&gt;
+                    &lt;string&gt;Default Configuration&lt;/string&gt;
+                    &lt;key&gt;UISceneDelegateClassName&lt;/key&gt;
+                    &lt;string&gt;$(PRODUCT_MODULE_NAME).SceneDelegate&lt;/string&gt;
+                &lt;/dict&gt;
+            &lt;/array&gt;
+        &lt;/dict&gt;
+    &lt;/dict&gt;
+    &lt;key&gt;UILaunchScreen&lt;/key&gt;
+    &lt;dict/&gt;
+    &lt;key&gt;UIRequiredDeviceCapabilities&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;armv7&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;UISupportedInterfaceOrientations&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;UIInterfaceOrientationPortrait&lt;/string&gt;
+        &lt;string&gt;UIInterfaceOrientationLandscapeLeft&lt;/string&gt;
+        &lt;string&gt;UIInterfaceOrientationLandscapeRight&lt;/string&gt;
+    &lt;/array&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</key>
+	<string></string>
+</dict>
 </plist>

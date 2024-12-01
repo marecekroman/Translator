@@ -8,20 +8,43 @@
 import SwiftUI
 
 struct About: View {
+    @EnvironmentObject var themeManager: ThemeManager
+    @Environment(\.openURL) var openURL
+    
     var body: some View {
-        VStack {
-                ZStack{
-                    Text("This application was made by Roman Marecek as a school project")
-                    .foregroundColor(.red)
+        VStack(spacing: 20) {
+            Image(systemName: "globe")
+                .font(.system(size: 80))
+                .foregroundColor(themeManager.textColor)
+            
+            Text("Translator App")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(themeManager.textColor)
+            
+            Text("Version 2.0")
+                .font(.subheadline)
+                .foregroundColor(themeManager.textColor.opacity(0.8))
+            
+            Text("Created by Roman Mareček")
+                .font(.body)
+                .foregroundColor(themeManager.textColor)
+            
+            Text("This application supports multiple languages and provides features like text-to-speech, translation history, and theme switching.")
+                .multilineTextAlignment(.center)
+                .padding()
+                .foregroundColor(themeManager.textColor)
+            
+            Button("Visit Website") {
+                openURL(URL(string: "https://github.com/marecekroman")!)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.black)
+            .padding()
+            .background(themeManager.textColor)
+            .foregroundColor(themeManager.backgroundColor)
+            .cornerRadius(10)
         }
-    }
-}
-
-struct About_Previews: PreviewProvider {
-    static var previews: some View {
-        About()
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(themeManager.backgroundColor)
     }
 }

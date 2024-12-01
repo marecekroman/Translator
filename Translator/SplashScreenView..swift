@@ -8,22 +8,24 @@
 import SwiftUI
 
 struct SplashScreenView: View {
-    @State var isActive : Bool = false
+    @StateObject private var themeManager = ThemeManager()
+    @State private var isActive : Bool = false
     @State private var size = 0.8
     @State private var opacity = 0.5
     
     var body: some View {
         if isActive {
             ContentView()
+                .environmentObject(themeManager)
         } else {
             VStack {
                 VStack {
                     Image(systemName: "globe")
                         .font(.system(size: 120))
-                        .foregroundColor(.red)
+                        .foregroundColor(themeManager.textColor)
                     Text("Translator")
                         .font(Font.custom("Montserrat-Bold", size: 26))
-                        .foregroundColor(.red)
+                        .foregroundColor(themeManager.textColor)
                 }
                 .scaleEffect(size)
                 .opacity(opacity)
@@ -33,9 +35,9 @@ struct SplashScreenView: View {
                         self.opacity = 1.00
                     }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(.black)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(themeManager.backgroundColor)
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
                     withAnimation {
@@ -46,10 +48,3 @@ struct SplashScreenView: View {
         }
     }
 }
-
-struct SplashScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-        SplashScreenView()
-    }
-}
-

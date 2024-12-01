@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TranslatorApp: App {
+    @StateObject private var themeManager = ThemeManager()
+    
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
+                .environmentObject(themeManager)
         }
     }
 }

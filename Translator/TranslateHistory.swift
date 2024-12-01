@@ -8,52 +8,71 @@
 import SwiftUI
 
 struct TranslateHistory: View {
-
-    @State public var history = UserDefaults.standard.object(forKey: "savedHistory") as? [String: String] ?? [String: String]()
-    
-    @State private var profileText = ""
-    
-    func getHistory(){
-        for (key, value) in history {
-            profileText = profileText + key + " ---> " + value + "\n"
-        }
-        return
-    }
+    @EnvironmentObject var themeManager: ThemeManager
+    @Binding var history: [String: String]
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showConfirmation = false
     
     var body: some View {
-
-        VStack{
-            Text("Translation history")
-                .foregroundColor(.red)
-            if #available(iOS 16.0, *) {
-                TextEditor(text: .constant(profileText))
-                    .padding(.horizontal)
-                    .onAppear {
-                        self.getHistory()
+        VStack {
+            Text("Translation History")
+                .font(.title)
+                .foregroundColor(themeManager.textColor)
+                .padding()
+            
+            List {
+                ForEach(Array(history.keys), id: \.self) { key in
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Original: \(key)")
+                            .fontWeight(.medium)
+                            .foregroundColor(themeManager.textColor)
+                        Text("Translation: \(history[key] ?? "")")
+                            .foregroundColor(themeManager.textColor.opacity(0.7))
                     }
-                    .scrollContentBackground(.hidden)
-                    .background(.black)
-                    .foregroundColor(.red)
-            } else {
-                Text(profileText)
-                     .padding(.horizontal)
-                     .background(.black)
-                     .foregroundColor(.red)
-                
-                     .onAppear {
-                         self.getHistory()
-                     }
-                     .lineLimit(nil)
+                    .padding(.vertical, 4)
+                }
+                .onDelete(perform: deleteItems)
             }
-
+            .listStyle(PlainListStyle())
+            .colorScheme(themeManager.isDarkMode ? .dark : .light)
+            
+            Button("Clear History") {
+                showConfirmation = true
+            }
+            .foregroundColor(.red)
+            .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.black)
+        .background(themeManager.backgroundColor)
+        .alert(isPresented: $showConfirmation) {
+            Alert(
+                title: Text("Clear History"),
+                message: Text("Are you sure you want to clear all translation history?"),
+                primaryButton: .destructive(Text("Clear")) {
+                    clearHistory()
+                },
+                secondaryButton: .cancel()
+            )
+        }
     }
-}
+    
+    private func deleteItems(at offsets: IndexSet) {
+        let keys = Array(history.keys)
+        for index in offsets {
+            history.removeValue(forKey: keys[index])
+        }
+        
+        if history.isEmpty {
+            UserDefaults.standard.removeObject(forKey: "savedHistory")
+        } else {
+            UserDefaults.standard.set(history, forKey: "savedHistory")
+        }
+        UserDefaults.standard.synchronize()
+    }
 
-struct TranslateHistory_Previews: PreviewProvider {
-    static var previews: some View {
-        TranslateHistory()
-    }
+    private func clearHistory() {
+            history.removeAll()
+            UserDefaults.standard.removeObject(forKey: "savedHistory")
+            UserDefaults.standard.synchronize()
+        }
 }

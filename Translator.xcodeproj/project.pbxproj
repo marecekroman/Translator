@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F11264BA2CF7A558000ADC70 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11264B92CF7A541000ADC70 /* ThemeManager.swift */; };
+		F11264BC2CF7A5C9000ADC70 /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11264BB2CF7A5C6000ADC70 /* LanguagePicker.swift */; };
+		F11264BE2CF7A602000ADC70 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11264BD2CF7A5FE000ADC70 /* ShareSheet.swift */; };
+		F11264C32CF7C0FF000ADC70 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11264C22CF7C0FC000ADC70 /* ViewModifiers.swift */; };
 		F1569185295876620046BA68 /* TranslatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1569184295876620046BA68 /* TranslatorApp.swift */; };
 		F1569187295876620046BA68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1569186295876620046BA68 /* ContentView.swift */; };
 		F1569189295876640046BA68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1569188295876640046BA68 /* Assets.xcassets */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F11264B92CF7A541000ADC70 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		F11264BB2CF7A5C6000ADC70 /* LanguagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
+		F11264BD2CF7A5FE000ADC70 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		F11264C22CF7C0FC000ADC70 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		F1569181295876620046BA68 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1569184295876620046BA68 /* TranslatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorApp.swift; sourceTree = "<group>"; };
 		F1569186295876620046BA68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +65,10 @@
 		F1569183295876620046BA68 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
+				F11264C22CF7C0FC000ADC70 /* ViewModifiers.swift */,
+				F11264BD2CF7A5FE000ADC70 /* ShareSheet.swift */,
+				F11264BB2CF7A5C6000ADC70 /* LanguagePicker.swift */,
+				F11264B92CF7A541000ADC70 /* ThemeManager.swift */,
 				F180BBDC2958D0CB00E8DDE8 /* TranslateHistory.swift */,
 				F1569184295876620046BA68 /* TranslatorApp.swift */,
 				F1569186295876620046BA68 /* ContentView.swift */,
@@ -104,7 +116,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					F1569180295876620046BA68 = {
 						CreatedOnToolsVersion = 14.2;
@@ -149,8 +161,12 @@
 				F180BC052958F61800E8DDE8 /* About.swift in Sources */,
 				F1569187295876620046BA68 /* ContentView.swift in Sources */,
 				F180BBDD2958D0CB00E8DDE8 /* TranslateHistory.swift in Sources */,
+				F11264C32CF7C0FF000ADC70 /* ViewModifiers.swift in Sources */,
+				F11264BC2CF7A5C9000ADC70 /* LanguagePicker.swift in Sources */,
 				F156919329587A320046BA68 /* SplashScreenView..swift in Sources */,
 				F1569185295876620046BA68 /* TranslatorApp.swift in Sources */,
+				F11264BA2CF7A558000ADC70 /* ThemeManager.swift in Sources */,
+				F11264BE2CF7A602000ADC70 /* ShareSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +209,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -253,6 +270,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -276,6 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Translator/Translator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Translator/Preview Content\"";
@@ -307,6 +326,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Translator/Translator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Translator/Preview Content\"";
